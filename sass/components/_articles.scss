@@ -1,0 +1,33 @@
+.articles-list {
+  display: flex;
+  column-gap: 30px;
+  margin-bottom: -94px;
+
+  &__background {
+    width: 270px;
+    height: 120px;
+    background-color: $sectionBgLight;
+  }
+
+  &__icon {
+    margin: 25px 100px;
+    background-color: $sectionBgLight;
+    border-width: 100px;
+  }
+
+  &__heading {
+    font-size: 14px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $textPrimary;
+    padding: 30px 0 10px 0;
+  }
+
+  &__body {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: $textSecondary;
+  }
+}

@@ -1,0 +1,112 @@
+.portfolio-buttons-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  column-gap: 8px;
+
+  &__item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 1.63;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--text-black);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 6px 22px;
+    background-color: $sectionBgLight;
+    border-radius: 4px;
+    transition-property: background-color, color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: $defaultTransitionTimingFunction;
+
+    &:hover,
+    &:focus {
+      background: $active;
+      color: $white;
+      cursor: pointer;
+      box-shadow: $portfolioButtonsShadow;
+    }
+  }
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  &__item {
+    box-sizing: border-box;
+    flex-basis: calc((100% - 60px) / 3);
+
+    &:focus .portfolio-list__item-overlay {
+      transform: translateY(0);
+    }
+  }
+
+  &__item &__item-border {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item-shadow:hover &__item-overlay {
+    transform: translateY(0);
+  }
+
+  &__item-shadow:hover &__item-image {
+    box-shadow: 0px 4px 4px $portfolioBoxShadow;
+    cursor: pointer;
+  }
+
+  &__item-shadow:hover &__item-border {
+    box-shadow: 0px 1px 1px $portfolioBoxShadow2;
+    cursor: pointer;
+  }
+
+  &__item-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__item-overlay {
+    padding: 49px 45px 49px 24px;
+    font-weight: 400px;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    background-color: $portfolioBoxOverlay;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-property: transform, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: $defaultTransitionTimingFunction;
+    transform: translateY(101%);
+  }
+
+  &__item-border {
+    border-left: 1px solid $portfolioBoxBorder;
+    border-right: 1px solid $portfolioBoxBorder;
+    border-bottom: 1px solid $portfolioBoxBorder;
+  }
+
+  &__item-name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: $textPrimary;
+    margin: 20px 24px 4px;
+  }
+
+  &__item-type {
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+    color: $textSecondary;
+    margin: 0 24px 20px;
+  }
+}

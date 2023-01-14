@@ -1,0 +1,135 @@
+.footer {
+  background: $sectionBgDark;
+
+  &__wrapper {
+    display: flex;
+    gap: 70px;
+  }
+
+  &__box-first {
+    padding: 60px 0;
+    white-space: nowrap;
+  }
+
+  &__address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: $white;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+  }
+
+  &__address-item {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: $textFooter;
+    text-decoration: none;
+    transition: color 250ms $defaultTransitionTimingFunction;
+
+    &:hover,
+    &:focus {
+      color: $active;
+    }
+  }
+
+  &__box-second {
+    padding: 72px 0 100px;
+  }
+
+  &__heading {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__list-item {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__list-item-link {
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    color: $white;
+    background-color: $iconsBgDark;
+    border-radius: 50%;
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: $defaultTransitionTimingFunction;
+
+    &:hover,
+    &:focus {
+      background-color: $active;
+      color: $white;
+    }
+  }
+
+  &__list-item-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    fill: currentColor;
+  }
+
+  &__box-third {
+    padding: 72px 0 94px;
+    margin-left: 8px;
+    width: 100%;
+  }
+
+  &__form {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__input {
+    background-color: $sectionBgDark;
+    width: 358px;
+    padding-left: 16px;
+    border: 1px solid $newsletterInputBorder;
+    filter: $newsletterBoxShadow;
+    border-radius: 4px;
+    width: 100%;
+
+    &::placeholder {
+      font-weight: 400;
+      line-height: 1.25;
+      color: $textFooter;
+    }
+  }
+
+  &__button {
+    font-weight: 700;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: $white;
+    background: $active;
+    box-shadow: 0px 4px 4px $buttonsShadow;
+    border: none;
+    padding: 10px 28px 10px 42px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  &__button-icon {
+    fill: $white;
+    margin-left: 24px;
+  }
+}

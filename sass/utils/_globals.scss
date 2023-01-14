@@ -1,0 +1,31 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $textPrimary;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+figcaption {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+}
