@@ -1,15 +1,30 @@
 .clients {
   display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
   justify-content: center;
-  column-gap: 30px;
+
+  &__item {
+    flex-basis: calc((100% - 30px) / 2);
+
+    @include tablet {
+      flex-basis: calc((100% - 60px) / 3);
+    }
+    @include desktop {
+      flex-basis: calc((100% - 150px) / 6);
+    }
+  }
 
   &__icon {
     border: 1px solid $iconsPrimary;
+    width: 100%;
     border-radius: 4px;
     fill: $iconsPrimary;
     transition-property: border-color, fill;
     transition-duration: 250ms;
     transition-timing-function: $defaultTransitionTimingFunction;
+    display: flex;
+    justify-content: center;
 
     &:hover,
     &:focus {
