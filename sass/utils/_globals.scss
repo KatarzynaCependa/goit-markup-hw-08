@@ -14,8 +14,14 @@ figure {
 }
 
 img {
-  vertical-align: middle;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
+
+// img {
+//   vertical-align: middle;
+// }
 
 figcaption {
   margin-top: 0;
