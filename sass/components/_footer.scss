@@ -1,14 +1,34 @@
 .footer {
   background: $sectionBgDark;
+  padding: 60px 0px;
 
   &__wrapper {
-    display: flex;
-    gap: 70px;
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 144px;
+      justify-content: center;
+    }
+
+    @include desktop {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 70px;
+    }
   }
 
   &__box-first {
-    padding: 60px 0;
-    white-space: nowrap;
+    margin-bottom: 60px;
+
+    @include tablet {
+      margin: 0 0 60px 0;
+    }
+
+    @include desktop {
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+    }
   }
 
   &__address {
@@ -20,7 +40,13 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    row-gap: 9px;
+    row-gap: 8px;
+    align-items: center;
+
+    @include desktop {
+      row-gap: 9px;
+      align-items: baseline;
+    }
   }
 
   &__address-item {
@@ -38,7 +64,15 @@
   }
 
   &__box-second {
-    padding: 72px 0 100px;
+    margin-bottom: 60px;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include desktop {
+      margin: 12px 0 0 0;
+    }
   }
 
   &__heading {
@@ -48,11 +82,17 @@
     text-transform: uppercase;
     color: $white;
     margin-bottom: 20px;
+    text-align: center;
+
+    @include desktop {
+      text-align: start;
+    }
   }
 
   &__list {
     display: flex;
     gap: 10px;
+    justify-content: center;
   }
 
   &__list-item {
@@ -86,24 +126,42 @@
   }
 
   &__box-third {
-    padding: 72px 0 94px;
-    margin-left: 8px;
     width: 100%;
+
+    @include desktop {
+      margin: 12px 0 0 0;
+    }
   }
 
   &__form {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+      gap: 12px;
+    }
   }
 
   &__input {
     background-color: $sectionBgDark;
-    width: 358px;
     padding-left: 16px;
     border: 1px solid $newsletterInputBorder;
     filter: $newsletterBoxShadow;
     border-radius: 4px;
-    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px 0 15px 16px;
+
+    @include tablet {
+      width: 59%;
+      margin: auto auto 20px;
+    }
+
+    @include desktop {
+      padding: 1px 2px 1px 16px;
+      margin: 0;
+      width: 100%;
+    }
 
     &::placeholder {
       font-weight: 400;
@@ -122,10 +180,15 @@
     border: none;
     padding: 10px 28px 10px 42px;
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
     cursor: pointer;
+    margin: auto;
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      margin: 0;
+    }
   }
 
   &__button-icon {
