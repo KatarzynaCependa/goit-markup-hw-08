@@ -1,8 +1,26 @@
 .team-list {
   display: flex;
-  justify-content: center;
-  column-gap: 30px;
+  flex-direction: column;
+  row-gap: 30px;
 
+  @include tablet {
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 30px;
+
+    &__item {
+      flex-basis: calc((100% - 30px) / 2);
+    }
+  }
+
+  @include desktop {
+    justify-content: center;
+    column-gap: 30px;
+
+    &__item {
+      flex-basis: calc((100% - 90px) / 4);
+    }
+  }
 }
 
 .team-card {
@@ -38,7 +56,11 @@
     display: flex;
     gap: 10px;
     justify-content: center;
-    margin: 16px 0 30px 0;
+    margin: 16px 0 24px 0;
+
+    @include desktop {
+      margin: 16px 0 30px 0;
+    }
   }
 
   &__icon-link {
@@ -65,3 +87,71 @@
     fill: currentColor;
   }
 }
+
+// .team-list {
+//   display: flex;
+//   justify-content: center;
+//   column-gap: 30px;
+
+// }
+
+// .team-card {
+//   background: $white;
+//   box-shadow: $modalShadow;
+//   border-radius: 0px 0px 4px 4px;
+
+//   &__item {
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     padding: 30px 0 0;
+//   }
+
+//   &__name {
+//     font-weight: 500;
+//     line-height: 1.19;
+//     text-align: center;
+//     letter-spacing: 0.03em;
+//     color: $textPrimary;
+//     margin: 0 0 10px 0;
+//   }
+
+//   &__profession {
+//     font-weight: 400;
+//     line-height: 1.19;
+//     text-align: center;
+//     letter-spacing: 0.03em;
+//     color: $textSecondary;
+//   }
+
+//   &__icons-box {
+//     display: flex;
+//     gap: 10px;
+//     justify-content: center;
+//     margin: 16px 0 30px 0;
+//   }
+
+//   &__icon-link {
+//     width: 44px;
+//     height: 44px;
+//     padding: 12px;
+//     color: $iconsPrimary;
+//     border-radius: 50%;
+//     transition-property: background-color, color;
+//     transition-duration: 250ms;
+//     transition-timing-function: $defaultTransitionTimingFunction;
+
+//     &:hover,
+//     &:focus {
+//       background-color: $active;
+//       color: $white;
+//     }
+//   }
+
+//   &__icon-image {
+//     width: 20px;
+//     height: 20px;
+//     display: block;
+//     fill: currentColor;
+//   }
+// }
