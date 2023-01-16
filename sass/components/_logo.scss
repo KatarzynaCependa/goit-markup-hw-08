@@ -12,7 +12,7 @@
   @include desktop {
     font-size: 26px;
     line-height: 1.19;
-    justify-content: baseline;
+    justify-content: flex-start;
   }
 
   &__black {
