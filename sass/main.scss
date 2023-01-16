@@ -1,5 +1,6 @@
 @import '../sass/utils/variables';
 @import '../sass/utils/globals';
+@import '../sass/utils/mixins';
 @import '../sass/components/articles';
 @import '../sass/components/clients';
 @import '../sass/components/footer';
@@ -11,46 +12,110 @@
 @import '../sass/components/team';
 
 .container {
-  width: 1200px;
+  max-width: 480px;
   padding: 0 15px;
-  margin: 0 auto;
+  margin: auto;
+
+  @include tablet {
+    max-width: 768px;
+  }
+
+  @include desktop {
+    max-width: 1200px;
+  }
 }
 
 .section {
-  padding: 94px 0;
+  padding: 60px 0;
 
-  &--team-background {
-    background-color: $sectionBgLight;
+  @include desktop {
     padding: 94px 0;
   }
 
-  &--hero-background {
+  &--responsive {
+    @include tablet {
+      padding: 60px 0 0 0;
+    }
+
+    @include desktop {
+      padding: 94px 0 0 0;
+    }
+  }
+
+  &--team-background {
     background-color: $sectionBgLight;
-    padding: 200px 0;
+    padding: 60px 0;
+
+    @include desktop {
+      padding: 94px 0;
+    }
+  }
+
+  &--hero-background {
+    padding: 118px 0;
     background-image: linear-gradient($imageOverlay, $imageOverlay),
-      url(../images/header/background.jpg);
+      url(../images/header/backgroundmob@1x.jpg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+
+    @include tablet {
+      background-image: linear-gradient($imageOverlay, $imageOverlay),
+        url(../images/header/backgroundtab@1x.jpg);
+    }
+
+    @include desktop {
+      padding: 200px 0;
+      background-image: linear-gradient($imageOverlay, $imageOverlay),
+        url(../images/header/backgrounddesk@1x.jpg);
+    }
+  }
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    &--hero-background {
+      background-image: linear-gradient($imageOverlay, $imageOverlay),
+        url(../images/header/backgroundmob@2x.jpg);
+    }
+    @include tablet {
+      background-image: linear-gradient($imageOverlay, $imageOverlay),
+        url(../images/header/backgroundtab@2x.jpg);
+    }
+
+    @include desktop {
+      background-image: linear-gradient($imageOverlay, $imageOverlay),
+        url(../images/header/backgrounddesk@2x.jpg);
+    }
   }
 
   &__heading-secondary {
-    font-size: 36px;
-    line-height: 1.17;
+    font-size: 28px;
+    line-height: 1.18;
     text-align: center;
     letter-spacing: 0.03em;
     color: $textPrimary;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @include desktop {
+      font-size: 36px;
+      line-height: 1.17;
+      margin-bottom: 50px;
+    }
   }
 
   &__hero-heading {
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 1.62;
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: $white;
-    margin: 0 252px;
+    margin-bottom: 30px;
+
+    @include desktop {
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
 
   &__hero-button {
@@ -65,7 +130,7 @@
     border: none;
     outline: none;
     padding: 10px 41px 10px 42px;
-    margin: 30px auto auto;
+    margin: auto;
     border-radius: 4px;
     transition-property: box-shadow;
     transition-duration: 250ms;
@@ -78,3 +143,72 @@
     }
   }
 }
+
+// .container {
+//   width: 1200px;
+//   padding: 0 15px;
+//   margin: 0 auto;
+// }
+
+// .section {
+//   padding: 94px 0;
+
+//   &--team-background {
+//     background-color: $sectionBgLight;
+//     padding: 94px 0;
+//   }
+
+//   &--hero-background {
+//     background-color: $sectionBgLight;
+//     padding: 200px 0;
+//     background-image: linear-gradient($imageOverlay, $imageOverlay),
+//       url(../images/header/background.jpg);
+//     background-position: center;
+//     background-repeat: no-repeat;
+//   }
+
+//   &__heading-secondary {
+//     font-size: 36px;
+//     line-height: 1.17;
+//     text-align: center;
+//     letter-spacing: 0.03em;
+//     color: $textPrimary;
+//     margin-bottom: 50px;
+//   }
+
+//   &__hero-heading {
+//     font-weight: 900;
+//     font-size: 44px;
+//     line-height: 1.36;
+//     text-align: center;
+//     letter-spacing: 0.06em;
+//     text-transform: uppercase;
+//     color: $white;
+//     margin: 0 252px;
+//   }
+
+//   &__hero-button {
+//     font-weight: 700;
+//     line-height: 1.88;
+//     display: flex;
+//     align-items: center;
+//     text-align: center;
+//     letter-spacing: 0.06em;
+//     color: $white;
+//     background: $active;
+//     border: none;
+//     outline: none;
+//     padding: 10px 41px 10px 42px;
+//     margin: 30px auto auto;
+//     border-radius: 4px;
+//     transition-property: box-shadow;
+//     transition-duration: 250ms;
+//     transition-timing-function: $defaultTransitionTimingFunction;
+
+//     &:hover,
+//     &:focus {
+//       box-shadow: 0px 4px 4px $buttonsShadow;
+//       cursor: pointer;
+//     }
+//   }
+// }
