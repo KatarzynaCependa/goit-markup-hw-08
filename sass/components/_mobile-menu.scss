@@ -42,7 +42,7 @@
 .mobile-nav {
   &__item {
     &:not(:last-child) {
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
   }
 
@@ -69,10 +69,21 @@
 .mobile-contacts {
   display: flex;
   flex-direction: column;
+  margin-bottom: 64px;
 
   &__item {
+    &:not(:last-of-type) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__link {
     text-decoration: none;
     color: $textSecondary;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
 
     &:not(:last-child) {
       margin-bottom: 32px;
