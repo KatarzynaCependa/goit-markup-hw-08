@@ -14,8 +14,16 @@
   }
 
   &__nav-list {
-    display: flex;
-    margin-left: 93px;
+    display: none;
+
+    @include tablet {
+      display: flex;
+      margin-left: 93px;
+    }
+    @include desktop {
+      display: flex;
+      margin-left: 93px;
+    }
   }
 
   &__nav-list &__nav-list-item:not(:last-child) {
@@ -69,7 +77,17 @@
   }
 
   &__contacts {
-    display: flex;
+    display: none;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+    }
   }
 
   &__contacts &__contacts-item {

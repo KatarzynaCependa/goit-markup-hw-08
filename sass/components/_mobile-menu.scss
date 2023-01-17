@@ -1,0 +1,133 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $white;
+  transform: translateX(100%);
+  transition-duration: 250ms;
+  transition-timing-function: $defaultTransitionTimingFunction;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background-color: $white;
+
+    &:hover {
+      cursor: pointer;
+      fill: $active;
+      transition-duration: 250ms;
+      transition-timing-function: $defaultTransitionTimingFunction;
+    }
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.mobile-nav {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: $textPrimary;
+    text-decoration: none;
+
+    &:hover {
+      color: $active;
+      transition-duration: 250ms;
+      transition-timing-function: $defaultTransitionTimingFunction;
+    }
+
+    &--is-active {
+      color: $active;
+    }
+  }
+}
+
+.mobile-contacts {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    text-decoration: none;
+    color: $textSecondary;
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &:hover {
+      color: $active;
+    }
+
+    &--is-active {
+      color: $active;
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+.mobile-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 0;
+  text-decoration: none;
+
+  &__item {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22px;
+    letter-spacing: 0.02em;
+    color: $active;
+    text-decoration: none;
+    padding-right: 10px;
+
+    &:not(:last-of-type) {
+      border-right: 1px solid $modalBorder;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transition-duration: 250ms;
+      transition-timing-function: $defaultTransitionTimingFunction;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 1.22;
+    color: $active;
+    text-decoration: none;
+
+    &--twitter,
+    &--facebook,
+    &--linkedin {
+      padding-left: 10px;
+    }
+  }
+}
