@@ -61,6 +61,13 @@
       position: absolute;
       top: 46px;
       left: 0;
+
+      @include tablet {
+        top: 49px;
+      }
+      @include desktop {
+        top: 46px;
+      }
     }
 
     &--not-active:hover::after,
@@ -73,6 +80,13 @@
       position: absolute;
       top: 46px;
       left: 0;
+
+      @include tablet {
+        top: 49px;
+      }
+      @include desktop {
+        top: 46px;
+      }
     }
   }
 
@@ -97,14 +111,21 @@
 
   &__contacts-item {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
     letter-spacing: 0.02em;
     color: $textSecondary;
     text-decoration: none;
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: $defaultTransitionTimingFunction;
+
+    @include tablet {
+      font-size: 12px;
+      line-height: 1.17px;
+    }
+    @include desktop {
+      font-size: 14px;
+      line-height: 1.14;
+    }
 
     &:hover,
     &:focus {
