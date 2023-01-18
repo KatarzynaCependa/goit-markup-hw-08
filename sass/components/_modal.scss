@@ -139,6 +139,7 @@
   &__declaration-container-item {
     display: flex;
     align-items: center;
+    margin: 0 40px;
   }
 
   &__default-checkbox {
@@ -169,7 +170,7 @@
     letter-spacing: 0.03em;
     color: $textSecondary;
     text-align: center;
-    margin-left: 7px;
+    margin-left: 8px;
   }
 
   &__statement &__statement-link {
