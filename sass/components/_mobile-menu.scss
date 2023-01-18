@@ -1,9 +1,6 @@
 .mobile-menu {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
@@ -16,27 +13,6 @@
 
   &.is-open {
     transform: translateX(0);
-  }
-
-  &__toggle {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    border: none;
-    background-color: $white;
-
-    &:hover {
-      cursor: pointer;
-      fill: $active;
-      transition-duration: 250ms;
-      transition-timing-function: $defaultTransitionTimingFunction;
-    }
-    @include tablet {
-      display: none;
-    }
-    @include desktop {
-      display: none;
-    }
   }
 }
 

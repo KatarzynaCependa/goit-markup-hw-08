@@ -13,6 +13,25 @@
     align-items: center;
   }
 
+  &__toggle {
+    display: flex;
+    border: none;
+    background-color: $white;
+
+    &:hover {
+      cursor: pointer;
+      fill: $active;
+      transition-duration: 250ms;
+      transition-timing-function: $defaultTransitionTimingFunction;
+    }
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+
   &__nav-list {
     display: none;
 
