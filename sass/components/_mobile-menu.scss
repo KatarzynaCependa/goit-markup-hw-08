@@ -10,6 +10,7 @@
   justify-content: space-between;
   background-color: $white;
   transform: translateX(100%);
+  transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: $defaultTransitionTimingFunction;
 
